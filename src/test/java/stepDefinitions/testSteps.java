@@ -11,6 +11,9 @@ import pageObjects.inventoryPage;
 import pageObjects.loginPage;
 import pageManager.PageWrapper;
 
+import java.util.Iterator;
+import java.util.Set;
+
 public class testSteps {
 
     WebDriver driver;
@@ -41,10 +44,8 @@ public class testSteps {
 
     @Given("the user opens URL")
     public void the_user_opens_url() {
-
+        // getting URL from config.properties file
         driver.get(configFileReader.getUrl());
-
-
     }
 
     @Then("^the user enters username as (.*) and password as (.*)$")
