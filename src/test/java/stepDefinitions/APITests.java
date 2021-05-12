@@ -22,7 +22,7 @@ public class APITests {
     public void getAPIRequest(){
 
         Response resp= given().baseUri(baseURL).
-        when().get("/api/v1/employees").andReturn();
+            when().get("/api/v1/employees").andReturn();
 
         String body = resp.asString();
         System.out.println("Response Body==> "+ body);
@@ -47,7 +47,7 @@ public class APITests {
     public void postNewEmployeeData(){
 
         // Body which need to be posted in API
-        String body_text= "{\"name\":\"Shashank\",\"salary\":\"10000\",\"age\":\"31\"}";
+        String body_text= "{\"name\":\"Shashank\",\"salary\":\"50000\",\"age\":\"31\"}";
 
         // Header to update with POST request
         HashMap<String, String> header_to_update = new HashMap<String, String>();
@@ -64,7 +64,7 @@ public class APITests {
         // Validate Assertions- verify posted data
         valid_response.assertThat().body("status",equalTo("success"))
                 .assertThat().body("data.name",equalTo("Shashank"))
-                .assertThat().body("data.salary",equalTo("10000"))
+                .assertThat().body("data.salary",equalTo("50000"))
                 .assertThat().body("data.age",equalTo("31"));
 
     }
