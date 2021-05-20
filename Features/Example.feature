@@ -9,7 +9,7 @@ Feature: Shopping Cart
 @run
   Scenario: Shhoping Cart 2
     Given the user opens URL
-    And the user enters username as standard_user and password as secret_sauce
+    Then the user enters username as standard_user and password as secret_sauce
     Then the user clicks login button
     And the user clicks item
 
